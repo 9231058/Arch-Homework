@@ -1,7 +1,9 @@
 \documentclass[11pt]{article}
+
 \usepackage{tikz}
 \usepackage{amsmath}
-\usetikzlibrary{calc, shapes, backgrounds}
+\usetikzlibrary{calc, shapes, backgrounds, arrows}
+
 \author{Parham Alvani}
 \title{Computer Architecture Homework 1}
 \begin{document}
@@ -16,6 +18,43 @@ powered by \LaTeX
 \end{titlepage}
 \tableofcontents
 \newpage
+\section{Problem 1}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+	text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+	text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+	minimum height=2em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+	\node [block] (A) {A};
+	\node [decision, right of=A] (inputA) {En};
+	\node [block, right of=inputA, node distance=3cm] (B) {B};
+	\node [decision, below of=B] (inputB) {En};
+	\node [block, right of=inputB, node distance=3cm] (C) {C};
+	\node [decision, below of=C] (inputC) {En};
+	\node [block, right of=inputC, node distance=3cm] (D) {D};
+	\node [decision, below of=D] (inputD) {En};
+	\node [cloud, left of=inputD] (outputD) {X};
+
+	\path [line] (A) -- (inputA);
+	\path [line] (inputA) -- node [near start] {no} (A);
+	\path [line] (inputA) -- node [near start] {yes} (B);
+	\path [line] (B) -- (inputB);
+	\path [line] (inputB) -- node [near start] {no} (B);
+	\path [line] (inputB) -- node [near start] {yes} (C);
+	\path [line] (C) -- (inputC);
+	\path [line] (inputC) -- node [near start] {no} (C);
+	\path [line] (inputC) -- node [near start] {yes} (D);
+	\path [line] (D) -- (inputD);
+	\path [line] (inputD) -- node [near start] {no} (D);
+	\path [line] (inputD) -- node [near start] {yes} (outputD);
+	\path [line] (outputD) -| (A);
+\end{tikzpicture}
+
 \section{Problem 2}
 \paragraph{1}
 \paragraph{2}
@@ -26,7 +65,7 @@ According to following diagram :
 		child { node (T1) {$t_1$}}
 		child { node (@T1) {$\bullet$}
 			child {node (T2) {$t_2$}}
-			child {node (@T2) {$\bullet$}}
+		child {node (@T2) {$\bullet$}}
 		};
 	\begin{scope}[nodes = {draw = none}]
 		\path (START) -- (T1)  node [near start, left]  {$h_1$};
@@ -41,12 +80,13 @@ According to following diagram :
 	Average Memory Access Time, the exact formula
 	\begin{equation}
 		\label{eq:AMAT-e}
+		t_1 + (1 - h_1) * [t_2 + (1 - h_2) * [\ldots]]
 	\end{equation}	
 \item
 	Average Memory Access Time, an approximate formula
 	\begin{equation}
 		\label{eq:AMAT-a}
-		h_1 * t_1 + (1 - h_1) [h_2 * t_2 + (1 - h_2)(\ldots)]
+		h_1 * t_1 + (1 - h_1) [h_2 * t_2 + (1 - h_2) * [\ldots]]
 	\end{equation}
 \end{itemize}
 \paragraph{3}
