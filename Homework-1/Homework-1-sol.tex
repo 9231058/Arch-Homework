@@ -90,17 +90,40 @@ According to following diagram :
 	\end{equation}
 \end{itemize}
 \paragraph{3}
+\begin{itemize}
+\item
+	Average Memory Access Time, the exact formula
+	\begin{equation}
+		\label{eq:AMAT-e-4}
+		t_1 + (1 - h_1) * t_2 + (1 - h_1) * (1 - h_2) * t_3 + (1 - h_1) * (1 - h_2) * (1 - h_3) * t_4
+	\end{equation}
+\item
+	Average Memory Access Time, an approximate formula
+	\begin{equation}
+		\label{eq:AMAT-a-4}
+		h_1 * t_1 + (1 - h_1) * h_2 * t_2 + (1 - h_1) * (1 - h_2) * h_3 * t_3 + (1 - h_1) * (1 - h_2) * (1 - h_3) * h_4 * t_4
+	\end{equation}
+\end{itemize}
 \paragraph{4}
 \paragraph{5}
+Substituting $2ns$ for $t_1$, $0.25$ for $h_1$, $2ns$ for $t_2$, $0.36$ for $h_2$, $4ns$ for $t_3$, $0.54$ for $h_3$,$5ns$ for $t_4$, $0.76$ for $h_3$,
+in (\ref{eq:AMAT-a-4}) gives us:
+\begin{align*}
+	\bar{T} &= 0.25 * 2 + (1 - 0.25) * 0.36 * 2 + (1 - 0.25) * (1 - 0.36) * 0.54 * 4 + \\
+	&\qquad \phantom{= 0.25 * 2 + (1 - 0.25)} (1 - 0.25) * (1 - 0.36) * (1 - 0.54) * 0.76 * 5 \\
+	&= 0.5 + 0.75 * 0.36 * 2 + 0.75 * 0.64 * 0.54 * 4 + 0.75 * 0.64 * 0.46 * 0.76 * 5 \\
+	&= 0.50 + 0.54 + 1.00 + 0.80 \\
+	&= 2.84ns
+\end{align*}
 \section{Problem 3}
 The following is the avrage memory access time equlation for
 memory with 3 level:
 \begin{equation}
-	\label{eq:AMAT-3}
+	\label{eq:AMAT-a-3}
 	\bar{T} = h_1 * t_1 + (1 - h_1) * h_2 * t_2 + (1 - h_1) * (1 - h_2) * h_3 * t_3
 \end{equation}
 Substituting $1ns$ for $t_1$, $0.9$ for $h_1$, $10ns$ for $t_2$, $0.5$ for $h_2$, $1000ns$ for $t_3$ and $1$ for $h_3$
-in (\ref{eq:AMAT-3}) gives us:
+in (\ref{eq:AMAT-a-3}) gives us:
 \begin{align*}
 	\bar{T} &= 0.9 * 1 + (1 - 0.9) * 0.5 * 10 + (1 - 0.9) * (1 - 0.5) * 1000\\
 	&= 0.9 + 0.1 * 0.5 * 10 + 0.1 * 0.5 * 1000\\
@@ -109,14 +132,8 @@ in (\ref{eq:AMAT-3}) gives us:
 	&= 505.9ns
 \end{align*}
 \section{Problem 4}
-The following is the avrage memory access time equlation for
-memory with 4 level:
-\begin{equation}
-	\label{eq:AMAT-4}
-	\bar{T} = h_1 * t_1 + (1 - h_1) * h_2 * t_2 + (1 - h_1) * (1 - h_2) * h_3 * t_3 + (1 - h_1) * (1 - h_2) * (1 - h_3) * h_4 * t_4
-\end{equation}
-Substituting $1ns$ for $t_1$, $0.9$ for $h_1$, $10ns$ for $t_2$, $0.5$ for $h_2$, $8s$ for $t_3$, $0.63$ for $h_3$,$1000ns$ for $t_4$, $1$ for $h_3$,
-in (\ref{eq:AMAT-4}) gives us:
+Substituting $1ns$ for $t_1$, $0.9$ for $h_1$, $10ns$ for $t_2$, $0.5$ for $h_2$, $8ns$ for $t_3$, $0.63$ for $h_3$,$1000ns$ for $t_4$, $1$ for $h_3$,
+in (\ref{eq:AMAT-a-4}) gives us:
 \begin{align*}
 	\bar{T} &= 0.9 * 1 + (1 - 0.9) * 0.5 * 10 + (1 - 0.9) * (1 - 0.5) * 0.63 * 8 + \\
 	&\qquad \phantom{= 0.1 * 1 + (1 - 0.9)} (1 - 0.9) * (1 - 0.5) * (1 - 0.63) * 1000 \\
