@@ -107,12 +107,15 @@ According to following diagram :
 	\end{equation}
 \end{itemize}
 \paragraph{4}
-If we have following condition in our memory hierarchy, this memory hierarchy would reduce
+If we have following conditions in our memory hierarchy, this memory hierarchy would reduce
 our average memory access time:
 \begin{itemize}
 \item
 	$t_1 < t_2 < t_3 < \ldots < t_n$
+\item
+	$h_1 < h_2 < h_3 < \ldots < h_n$
 \end{itemize}
+Condition 2 is valid only if we consider searching time.
 \paragraph{5}
 Substituting $2ns$ for $t_1$, $0.25$ for $h_1$, $2ns$ for $t_2$, $0.36$ for $h_2$, $4ns$ for $t_3$, $0.54$ for $h_3$,$5ns$ for $t_4$, $0.76$ for $h_3$,
 in (\ref{eq:AMAT-a-4}) gives us:
