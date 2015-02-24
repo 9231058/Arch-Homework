@@ -16,6 +16,31 @@ powered by \LaTeX
 \end{titlepage}
 \tableofcontents
 \newpage
+\section{Problem 1}
+\begin{align*}
+	&\text{Instruction with no memory operand :} \\
+	&= 10 + (1 - 0.9) * (200 + (1 - 0.99) * 450) \\
+	&= 10 + 0.1 * (200 + 0.01 * 450) \\
+	&= 10 + 0.1 * (200 + 4.5) \\
+	&= 10 + 20 + 0.45 \\
+	&= 30.45ns \\
+	&\text{Instruction with one memory operand :} \\
+	&= 30.45 + 20 + (1 - 0.85) * (200 + (1 - 0.99) * 450) \\
+	&= 30.45 + 20 + 0.15 * (200 + 4.5) \\
+	&= 30.45 + 20 + 30 + 0.675 \\
+	&= 80.45 + 0.675 \\
+	&= 81.125ns \\
+	&\text{Instruction with two memory operand :} \\
+	&= 30.45 + 2 * (20 + 30 + 0.675) \\
+	&= 30.45 + 100 + 1.35 \\
+	&= 130.8ns \\
+\end{align*}
+and finally AMAT:
+\begin{align*}
+	&= 30.45 * 0.5 + 81.125 * 0.35 + 130.8 * 0.15 \\
+	&= 15.22 + 28.393 + 19.62 \\
+	&= 63.233ns \\
+\end{align*}
 \section{Problem 2}
 \begin{align*}
 	0& \rightarrow &0000 0000 \\
