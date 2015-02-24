@@ -1,5 +1,7 @@
 \documentclass[11pt]{article}
 
+\usepackage{amsmath}
+
 \author{Parham Alvani}
 \title{Computer Architecture Homework 2}
 \begin{document}
@@ -14,5 +16,45 @@ powered by \LaTeX
 \end{titlepage}
 \tableofcontents
 \newpage
-
+\section{Problem 2}
+\begin{align*}
+	0& \rightarrow &0000 0000 \\
+	21& \rightarrow &0001 0101 \\
+	23& \rightarrow &0001 0111 \\
+	35& \rightarrow &0010 0011 \\
+	76& \rightarrow &0100 1100 \\
+	1& \rightarrow  &0000 0001 \\
+	66& \rightarrow &0100 0010 \\
+	80& \rightarrow &0101 0000 \\
+	54& \rightarrow &0011 0110 \\
+	36& \rightarrow &0010 0100 \\
+	24& \rightarrow &0001 1000 \\
+	23& \rightarrow &0001 0111 \\
+	75& \rightarrow &0100 1011 \\
+	2& \rightarrow &0000 0010 \\
+\end{align*}
+\begin{center}
+	\begin{tabular}{l || l | c | r}
+		address & \#1 & \#2 & \#3 \\
+		\hline
+		0  & miss & hit & hit \\
+		21 & miss & hit & hit \\
+		23 & hit  & hit & hit \\
+		35 & miss & hit & hit \\
+		76 & miss & hit & hit \\
+		1  & hit  & hit & hit \\
+		66 & hit  & hit & hit \\
+		80 & miss & hit & hit \\
+		54 & miss & hit & hit \\
+		36 & hit  & hit & hit \\
+		24 & hit  & hit & hit \\
+		23 & hit  & hit & hit \\
+		75 & hit  & hit & hit \\
+		2  & hit  & hit & hit \\
+	\end{tabular}
+\end{center}
+\begin{align*}
+	\text{miss rate} &= \\
+	&= \frac{7}{14 * 3} = \frac{1}{6} \\
+\end{align*}
 \end{document}
