@@ -1,47 +1,47 @@
 \documentclass[11pt]{article}
 
 \usepackage{amsmath}
+\usepackage{xepersian}
 
-\author{Parham Alvani}
-\title{Computer Architecture Homework 2}
+\author{پرهام الوانی}
+\title{تکلیف معماری کامپیوتر سری ۲}
 \begin{document}
 \begin{titlepage}
 \begin{center}
-\emph{In The Name of God}
+\emph{به نام خدا}
 \end{center}
 \maketitle
 \begin{center}
-powered by \LaTeX
 \end{center}
 \end{titlepage}
 \tableofcontents
 \newpage
-\section{Problem 1}
+\section{مساله 1}
 \begin{align*}
-	&\text{Instruction with no memory operand :} \\
+	&\text{: Instruction with no memory operand} \\
 	&= 10 + (1 - 0.9) * (200 + (1 - 0.99) * 450) \\
 	&= 10 + 0.1 * (200 + 0.01 * 450) \\
 	&= 10 + 0.1 * (200 + 4.5) \\
 	&= 10 + 20 + 0.45 \\
 	&= 30.45ns \\
-	&\text{Instruction with one memory operand :} \\
+	&\text{: Instruction with one memory operand} \\
 	&= 30.45 + 20 + (1 - 0.85) * (200 + (1 - 0.99) * 450) \\
 	&= 30.45 + 20 + 0.15 * (200 + 4.5) \\
 	&= 30.45 + 20 + 30 + 0.675 \\
 	&= 80.45 + 0.675 \\
 	&= 81.125ns \\
-	&\text{Instruction with two memory operand :} \\
+	&\text{: Instruction with two memory operand} \\
 	&= 30.45 + 2 * (20 + 30 + 0.675) \\
 	&= 30.45 + 100 + 1.35 \\
 	&= 130.8ns \\
 \end{align*}
-and finally AMAT:
 \begin{align*}
+	&\text{: and finally AMAT} \\
 	&= 30.45 * 0.5 + 81.125 * 0.35 + 130.8 * 0.15 \\
 	&= 15.22 + 28.393 + 19.62 \\
 	&= 63.233ns \\
 \end{align*}
-\section{Problem 2}
+\section{مساله 2}
 \begin{align*}
 	0& \rightarrow &0000 0000 \\
 	21& \rightarrow &0001 0101 \\
@@ -82,4 +82,7 @@ and finally AMAT:
 	\text{miss rate} &= \\
 	&= \frac{7}{14 * 3} = \frac{1}{6} \\
 \end{align*}
+\section{مساله 3}
+بله با افزایش k همواره مقدار hit ratio افزایش میابد. این موضوع را میتوان اینگونه توصیف کرد که با افزایش k رعایت همجواری های زمانی بیشتر میشود که این موضوع در کنار رعایت همجواری مکانی در blocking باعث افزایش hit ratio میشود.
+\section{مساله 4}
 \end{document}
