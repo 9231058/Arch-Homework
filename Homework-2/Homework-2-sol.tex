@@ -80,7 +80,7 @@
 \end{center}
 \begin{align*}
 	\text{miss rate} &= \\
-	&= \frac{7}{14 * 3} = \frac{1}{6} \\
+	&= \frac{6}{14 * 3} = \frac{1}{7} \\
 \end{align*}
 \section{مساله 3}
 بله با افزایش k همواره مقدار hit ratio افزایش میابد. این موضوع را میتوان اینگونه توصیف کرد که با افزایش k رعایت همجواری های زمانی بیشتر میشود که این موضوع در کنار رعایت همجواری مکانی در blocking باعث افزایش hit ratio میشود.
@@ -91,40 +91,38 @@
 		address & \#1 \\
 		\hline
 		0  & miss \\
-		1  & miss \\
+		1  & hit \\
 		15 & miss \\
-		14 & miss \\
+		14 & hit \\
 		14 & hit  \\
 		15 & hit  \\
 		16 & miss \\
-		2  & miss \\
+		2  & hit \\
 		23 & miss \\
 		27 & miss \\
 		16 & hit  \\
 		14 & hit  \\
 		1  & hit  \\
-		21 & miss \\
-		22 & miss \\
+		21 & hit \\
+		22 & hit \\
 		23 & hit  \\
 		22 & hit  \\
 		10 & miss \\
-		18 & miss \\
-		15 & miss \\
+		18 & hit \\
+		15 & hit \\
 		1  & hit  \\
-		0  & miss \\
-		14 & miss \\
+		0  & hit \\
+		14 & hit \\
 		25 & miss \\
-		28 & miss \\
+		28 & hit \\
 	\end{tabular}
 	\begin{tabular}{l || c | c | c | c}
 		sets & \#1 & \#2 & \#3 & \#4 \\
 		\hline
-		0 & 14 & 0  & 18 & 28 \\
-		1 & 1  & 25 & 23 & 15 \\
 	\end{tabular}
 	\begin{align*}
 		\text{miss rate} &= \\
-		&= \frac{8}{25} = 32% \\
+		&= \frac{18}{25} = 72% \\
 	\end{align*}
 \end{center}
 \paragraph{2}
