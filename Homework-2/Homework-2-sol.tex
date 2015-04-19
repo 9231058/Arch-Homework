@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage{xepersian}
 
 \author{پرهام الوانی}
@@ -80,7 +81,7 @@
 \end{center}
 \begin{align*}
 	\text{miss rate} &= \\
-	&= \frac{7}{14 * 3} = \frac{1}{6} \\
+	&= \frac{6}{14 * 3} = \frac{1}{7} \\
 \end{align*}
 \section{مساله 3}
 بله با افزایش k همواره مقدار hit ratio افزایش میابد. این موضوع را میتوان اینگونه توصیف کرد که با افزایش k رعایت همجواری های زمانی بیشتر میشود که این موضوع در کنار رعایت همجواری مکانی در blocking باعث افزایش hit ratio میشود.
@@ -91,40 +92,40 @@
 		address & \#1 \\
 		\hline
 		0  & miss \\
-		1  & miss \\
+		1  & hit  \\
 		15 & miss \\
-		14 & miss \\
+		14 & hit  \\
 		14 & hit  \\
 		15 & hit  \\
 		16 & miss \\
-		2  & miss \\
+		2  & hit  \\
 		23 & miss \\
 		27 & miss \\
 		16 & hit  \\
 		14 & hit  \\
 		1  & hit  \\
-		21 & miss \\
-		22 & miss \\
+		21 & hit  \\
+		22 & hit  \\
 		23 & hit  \\
 		22 & hit  \\
 		10 & miss \\
-		18 & miss \\
-		15 & miss \\
+		18 & hit  \\
+		15 & hit  \\
 		1  & hit  \\
-		0  & miss \\
-		14 & miss \\
-		25 & miss \\
+		0  & hit  \\
+		14 & hit  \\
 		28 & miss \\
+		25 & hit  \\
 	\end{tabular}
 	\begin{tabular}{l || c | c | c | c}
-		sets & \#1 & \#2 & \#3 & \#4 \\
+		sets & Tag-1 & Tag-2 & Tag-3 & Tag-4 \\
 		\hline
-		0 & 14 & 0  & 18 & 28 \\
-		1 & 1  & 25 & 23 & 15 \\
+		0 & 0 & 2 & 3 & 1 \\
+		1 & 1 & 2 & 3 & - \\
 	\end{tabular}
 	\begin{align*}
 		\text{miss rate} &= \\
-		&= \frac{8}{25} = 32% \\
+		&= \frac{18}{25} = 72% \\
 	\end{align*}
 \end{center}
 \paragraph{2}
@@ -133,46 +134,46 @@
 		address & \#1 \\
 		\hline
 		0  & miss \\
-		1  & miss \\
+		1  & hit \\
 		15 & miss \\
-		14 & miss \\
+		14 & hit \\
 		14 & hit  \\
 		15 & hit  \\
 		16 & miss \\
-		2  & miss \\
+		2  & hit  \\
 		23 & miss \\
 		27 & miss \\
 		16 & hit  \\
 		14 & hit  \\
 		1  & hit  \\
-		21 & miss \\
-		22 & miss \\
+		21 & hit  \\
+		22 & hit  \\
 		23 & hit  \\
 		22 & hit  \\
 		10 & miss \\
-		18 & miss \\
-		15 & miss \\
+		18 & hit  \\
+		15 & hit  \\
 		1  & hit  \\
-		0  & miss \\
-		14 & miss \\
-		25 & miss \\
+		0  & hit  \\
+		14 & hit  \\
 		28 & miss \\
+		25 & hit  \\
 	\end{tabular}
 	\begin{tabular}{l || c}
-		sets & \#1 \\
+		sets & Tag-1 \\
 		\hline
 		0 & 0  \\
-		1 & 25 \\
-		2 & 18 \\
-		3 & 27 \\
-		4 & 28 \\
-		5 & 21 \\
-		6 & 14 \\
-		7 & 15 \\
+		1 & - \\
+		2 & 0 \\
+		3 & 0 \\
+		4 & 0 \\
+		5 & 0 \\
+		6 & 0 \\
+		7 & 0 \\
 	\end{tabular}
 	\begin{align*}
 		\text{miss rate} &= \\
-		&= \frac{8}{25} = 32% \\
+		&= \frac{18}{25} = 72% \\
 	\end{align*}
 \end{center}
 \paragraph{3}
@@ -181,9 +182,9 @@
 		address & \#1 \\
 		\hline
 		0  & miss \\
-		1  & miss \\
+		1  & hit  \\
 		15 & miss \\
-		14 & miss \\
+		14 & hit  \\
 		14 & hit  \\
 		15 & hit  \\
 		16 & miss \\
@@ -194,21 +195,21 @@
 		14 & hit  \\
 		1  & hit  \\
 		21 & miss \\
-		22 & miss \\
+		22 & hit  \\
 		23 & hit  \\
 		22 & hit  \\
 		10 & miss \\
 		18 & miss \\
-		15 & hit \\
+		15 & hit  \\
 		1  & hit  \\
-		0  & hit \\
-		14 & hit \\
-		25 & miss \\
+		0  & hit  \\
+		14 & hit  \\
 		28 & miss \\
+		25 & miss \\
 	\end{tabular}
 	\begin{align*}
 		\text{miss rate} &= \\
-		&= \frac{11}{25} = 44% \\
+		&= \frac{14}{25} = 56% \\
 	\end{align*}
 \end{center}
 \paragraph{4}
@@ -217,9 +218,9 @@
 		address & \#1 \\
 		\hline
 		0  & miss \\
-		1  & miss \\
+		1  & hit  \\
 		15 & miss \\
-		14 & miss \\
+		14 & hit  \\
 		14 & hit  \\
 		15 & hit  \\
 		16 & miss \\
@@ -230,21 +231,24 @@
 		14 & hit  \\
 		1  & hit  \\
 		21 & miss \\
-		22 & miss \\
+		22 & hit  \\
 		23 & hit  \\
 		22 & hit  \\
 		10 & miss \\
 		18 & miss \\
-		15 & hit \\
+		15 & hit  \\
 		1  & hit  \\
-		0  & miss \\
-		14 & hit \\
-		25 & miss \\
+		0  & hit  \\
+		14 & hit  \\
 		28 & miss \\
+		25 & miss \\
 	\end{tabular}
 	\begin{align*}
 		\text{miss rate} &= \\
-		&= \frac{10}{25} = 40% \\
+		&= \frac{14}{25} = 56% \\
 	\end{align*}
+	\begin{latin}
+		All result produced by \href{https://github.com/1995parham/TCache}{TCache}
+	\end{latin}
 \end{center}
 \end{document}
