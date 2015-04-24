@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xepersian}
+
+\author{پرهام الوانی}
+\title{تکلیف معماری کامپیوتر سری ۳}
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\emph{به نام خدا}
+\end{center}
+\maketitle
+\begin{center}
+\end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+\section{طراحی 1}
+در این طراحی تاخیر بافرض اینکه تاخیر ripple adder برابر با $2d$ و تاخیر Multiplexer برابر با $3d$ باشد داریم:
+\begin{align*}
+	&\text{FA-1: } 1 * 2d = 2d \\
+	&\Longrightarrow \text{Level-1: } 2d \\
+	&\text{FA-2: } 1 * 2d = 2d \\
+	&\text{Mux-1: } 3d \\
+	&\Longrightarrow \text{Level-2: } 5d \\
+	&\text{FA-3: } 2 * 2d = 4d \\
+	&\text{Mux-2: } 3d\\
+	&\Longrightarrow \text{Level-3: } 8d \\
+	&\text{FA-4: } 4 * 2d = 8d \\
+	&\text{Mux-3: } 3d\\
+	&\Longrightarrow \text{Level-4: } 11d \\
+	&\text{FA-5: } 5 * 2d = 10d \\
+	&\text{Mux-4: } 3d \\
+	&\Longrightarrow \text{Level-5: } 14d \\
+	&\text{FA-6: } 3 * 2d = 6d \\
+	&\Longrightarrow \text{Level-6: } 17d \\
+\end{align*}
+با توجه به آنجه در بالا گفته شد برای این طراحی نیاز به ۳۲ عدد Full Adder و ۱۰ عدد Multiplexer است.
+\section{طراحی 2}
+با توجه به اینکه در این طراحی از روابط SOP استفاده شده است پس تاخیر پس از محاسبه ی $p_i$ ها و $g_i$ ها برابر با $2d$ خواهد بود. توجه به این نکته هم خالی از لطف نیست که برای پیاده سازی OR با ورودی های زیاد ممکن است نیاز شود سطح های پیاده سازی افزایش یافته و تاخیر بیشتر شود.
+\begin{align*}
+	&delay = 3d
+\end{align*}
+و در نهایت برای تعداد قطعات مصرف شده در پیاده سازی انجام شده توسط نرم افزار proteus داریم:
+\begin{center}
+	\begin{tabular}{c | c}
+		Part Name & Quantity \\
+		AND & 15 \\
+		OR & 9 \\
+		XOR & 16 \\
+		AND-3 & 6 \\
+		OR-3 & 1 \\
+		OR-4 & 1 \\
+		AND-4 & 5 \\
+		AND-5 & 4 \\
+		OR-5 & 1 \\
+		AND-7 & 5 \\
+		OR-6 & 1 \\
+		OR-7 &  1 \\
+		AND-8 & 1 \\
+		OR-8 & 1 \\
+	\end{tabular}
+\end{center}
+\section{طراحی 3}
+در این طراحی نیاز به ۲ عدد Ripple Adder ۸ بیتی داریم زبرا اگر حاصل جمع carry داشته باشد باید حاصل را با ۱ جمع کینم. برای پیاده سازی بهینه تر Ripple Adder دوم را با استفاده از Half Adder ها پیاده سازی میگنیم.
+\begin{align*}
+	Half-Adder delay &= 1d \\
+	Full-Adder delay &= 2d \\
+\end{align*}
+\begin{align*}
+	Full-Adder based Ripple-Adder delay &= 2nd \\
+	&\Rightarrow 8 * 2d = 16d \\
+	Half-Adder based Ripple-Adder delay &= nd \\
+	&\Rightarrow 8 * d = 8d \\
+	&\Longrightarrow 8d + 16d = 24d \\
+\end{align*}
+با توجه آنچه در بالا گفته شد برای این طراحی نیاز به ۸ عدد Full-Adder و ۸ عدد Half-Adder است.
+\end{document}
