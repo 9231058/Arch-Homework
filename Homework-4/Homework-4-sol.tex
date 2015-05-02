@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xepersian}
+
+\author{پرهام الوانی}
+\title{تکلیف معماری کامپیوتر سری ۴}
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\emph{به نام خدا}
+\end{center}
+\maketitle
+\begin{center}
+\end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+\section{طراحی ۲}
+این ضرب کننده برای اعداد مکمل ۲ به درستی کار نمیکند برای ارتقا آن ابتدا لم زیر را بیان میکنیم :
+\begin{align*}
+	(x_{n-1}x_{n-2}x_{n-3} \ldots x_1x_0)_2 &= \\
+	&(-1)^{x_{n-1}} * x_{n-1} * 2^{n-1} + \sum_{i=1}^{n-1}{2^i*x_i}
+\end{align*}
+حال با توجه به آنچه بیان شد برای ارتقای ضرب کننده کافی است که در صورت ۱ بود پرارزشترین بیت (ببت علامت) یک بیت آنرا به منزله ی ۱- فرض کنیم. به این ترتیب به جای جمع کردن
+میبایست در حضور این بیت در یکی از عملوندها تفریق انجام دهیم.اگر این بیت در هر دو عملوند حضور داشته باشید میتوانیم از بسیط این رابطه به شرح زیر استفاده کنیم:
+\begin{align*}
+(x_{n-1}x_{n-2}x_{n-3} \ldots x_1x_0)_2 &* \\
+(y_{n-1}y_{n-2}y_{n-3} \ldots y_1y_0)_2 &= \\
+&(-1) * 2^{n-1} + \sum_{i=1}^{n-1}{2^i*x_i} *& \\
+&(-1) * 2^{n-1} + \sum_{i=1}^{n-1}{2^i*y_i} \\
+&= 2^{2n-1} &- 2^{n-1} * \sum_{i=1}^{n-1}{2^i*x_i} \\
+&- 2^{n-1} * \sum_{i=1}^{n-1}{2^i*x_i} &+ \sum_{i=1}^{n-1}{2^i*x_i} * \sum_{i=1}^{n-1}{2^i*y_i}
+\end{align*}
+\end{document}
+\section{طراحی ۳}
+در این طراحی هم میبایست مانند طراحی پیشین عمل کنیم.
