@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xepersian}
+
+\author{پرهام الوانی}
+\title{تکلیف معماری کامپیوتر سری ۵}
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\emph{به نام خدا}
+\end{center}
+\maketitle
+\begin{center}
+\end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+\section{مساله ۱}
+ابتدا عدد را به مبنای ۲ میبریم.
+\begin{align*}
+	-37.75 &= \\
+	&= -100101.11 \\
+	&= -1.0010111 * 2^{5}
+\end{align*}
+در ادامه عدد را به فرمت \lr{IEEE} باز نویسی میکنیم.
+\begin{align*}
+	Sign &= 1 \\
+	Exponent &= 10000100 \\
+	Fraction &= 00101110000000000000000 \\
+	&\rightarrow 1100\_0010\_0001\_0111\_0000\_0000\_0000\_0000 \\
+	&\rightarrow (C2170000)_{16}
+\end{align*}
+ابتدا عدد را در مبنای ۲ بازنویسی میکنیم.
+\begin{align*}
+	(40200000)_{16} &= 0100\_0000\_0010\_0000\_0000\_0000\_0000\_0000 \\
+	Sign &= 0 \\
+	Exponent &= 10000000 \\
+	Fraction &= 01000000000000000000000
+\end{align*}
+حال عدد را در مبنای ۱۰ یازنویسی میکنیم.
+\begin{align*}
+	1.01 * 2^{1} &= \\
+	&= 1.1 \\
+	&= 1.5
+\end{align*}
+
+\section{مساله ۲}
+\begin{align*}
+	x_{min} &= -0.11111111 * 2_{4} &= -1111.1111 &= -15.9375 \\
+	x_{max} &=  0.11111111 * 2_{4} &=  1111.1111 &=  15.9375
+\end{align*}
+\section{مساله ۳}
+ابتدا دقت و محدوده اعداد را برای حالت اول به شرح زیر بدست میاوریم: (با فرض استاندارد \lr{IEEE})
+\begin{align*}
+	x_{min} &= - (2 - 2^{-12}) * 2^{2^{19} - 1} \\
+	x_{max} &= (2 - 2^{-12}) * 2^{2^{19} - 1} \\
+	Accuracy &= 2^{-12} * 2^{-2^{19}}
+\end{align*}
+و در ادامه برای حالت دوم داریم:
+\begin{align*}
+		x_{min} &= - (2 - 2^{-25}) * 2^{2^{6} - 1} \\
+		x_{max} &= (2 - 2^{-25}) * 2^{2^{6} - 1} \\
+		Accuracy &= 2^{-25} * 2^{-2^{6}}
+\end{align*}
+\end{document}
