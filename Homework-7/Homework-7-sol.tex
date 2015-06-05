@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xepersian}
+
+\author{پرهام الوانی}
+\title{تکلیف معماری کامپیوتر سری ۶}
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\emph{به نام خدا}
+\end{center}
+\maketitle
+\begin{center}
+\end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+\section{مساله ۱}
+
+\section{مساله ۲}
+\section{مساله ۳}
+ابتدا تعداد بیت های انتقالی در ثانیه را حساب میکنیم.
+\begin{align*}
+	data &= 2400 * 8 = 19200
+\end{align*}
+حال از آنحا که در هر بار ۱۶ بیت داده منتقل میشود پس نیاز به ۱۲۰۰ سیکل در هر ثانیه داریم.
+\begin{align*}
+	cycles &= 10^6 - 1200 = 998800
+\end{align*}
+\begin{align*}
+	\frac{998800}{1000000} &= 99.88\% \\
+	& 100 - 99.88 = 0.12\%
+\end{align*}
+\section{مساله ۴}
+\begin{align*}
+	t_{F_{1}} &= 180 * \frac{60}{100} = 108s \\
+	t_{F_{2}} &= 108 * \frac{145}{100} = 156.60 \\
+	t_{T_{2}} &= 156.56 + 72 = 228.56s
+\end{align*}
+\end{document}
